@@ -4,12 +4,19 @@ Public Class Form1
 
     Private Sub btnDetermine_Click(sender As System.Object, e As System.EventArgs) Handles btnDetermine.Click
         Dim name As String
-        name = txtFullName.Text
+        name = txtFullName.Text.Trim
         txtFirstName.Text = FirstName(name)
     End Sub
 
     Function FirstName(ByVal name As String) As String
-        Return "Not Implemented Yet"
+        Dim indexspace As Integer
+
+        indexspace = name.IndexOf(" ")
+
+        Dim FstName As String
+        FstName = name.Substring(0, indexspace)
+
+        Return FstName
     End Function
 
 End Class
